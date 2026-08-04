@@ -1,0 +1,192 @@
+/* =============================================================================
+   Nile Dental Studio — design tokens
+   -----------------------------------------------------------------------------
+   Single source of truth for colour, type, space, radii, shadow and motion.
+   Nothing downstream may hardcode a hex value; everything references a token.
+
+   Direction: "clinical confidence, without the cold."
+     - Deep petrol teal carries the brand (water, calm, medical trust).
+     - Porcelain neutrals with a faint cool cast keep surfaces clean, not creamy.
+     - A single fresh mint accent for affirmative moments, a muted sand for
+       ratings and warmth. No terracotta, no acid green, no broadsheet serif.
+   ========================================================================== */
+
+:root {
+  /* --- Brand: petrol teal ------------------------------------------------ */
+  --brand-50: oklch(0.972 0.014 195);
+  --brand-100: oklch(0.94 0.03 195);
+  --brand-200: oklch(0.886 0.052 195);
+  --brand-300: oklch(0.812 0.069 195);
+  --brand-400: oklch(0.706 0.08 195);
+  --brand-500: oklch(0.6 0.083 196);
+  --brand-600: oklch(0.505 0.079 197);
+  --brand-700: oklch(0.424 0.068 198);
+  --brand-800: oklch(0.348 0.055 199);
+  --brand-900: oklch(0.282 0.043 200);
+  --brand-950: oklch(0.205 0.032 201);
+
+  /* --- Mint: the fresh, affirmative accent ------------------------------- */
+  --mint-50: oklch(0.978 0.021 172);
+  --mint-100: oklch(0.952 0.045 172);
+  --mint-200: oklch(0.906 0.073 172);
+  --mint-300: oklch(0.848 0.092 172);
+  --mint-400: oklch(0.778 0.104 172);
+  --mint-500: oklch(0.702 0.112 173);
+  --mint-600: oklch(0.598 0.099 174);
+
+  /* --- Sand: warmth, used sparingly (ratings, highlights) ---------------- */
+  --sand-100: oklch(0.958 0.031 85);
+  --sand-200: oklch(0.918 0.052 84);
+  --sand-300: oklch(0.868 0.072 82);
+  --sand-400: oklch(0.812 0.093 80);
+  --sand-500: oklch(0.752 0.108 78);
+  --sand-600: oklch(0.664 0.106 72);
+
+  /* --- Ink: cool porcelain → deep slate ---------------------------------- */
+  --ink-0: oklch(1 0 0);
+  --ink-25: oklch(0.99 0.003 200);
+  --ink-50: oklch(0.978 0.005 200);
+  --ink-100: oklch(0.958 0.006 201);
+  --ink-200: oklch(0.922 0.008 202);
+  --ink-300: oklch(0.87 0.01 204);
+  --ink-400: oklch(0.735 0.013 206);
+  --ink-500: oklch(0.605 0.015 208);
+  --ink-600: oklch(0.495 0.016 210);
+  --ink-700: oklch(0.398 0.018 212);
+  --ink-800: oklch(0.305 0.018 212);
+  --ink-900: oklch(0.238 0.017 213);
+  --ink-950: oklch(0.172 0.016 214);
+
+  /* --- Status ------------------------------------------------------------ */
+  --success-50: oklch(0.96 0.03 158);
+  --success-100: oklch(0.92 0.06 158);
+  --success-500: oklch(0.63 0.13 158);
+  --success-700: oklch(0.48 0.11 158);
+
+  --warning-50: oklch(0.968 0.033 78);
+  --warning-100: oklch(0.93 0.07 78);
+  --warning-500: oklch(0.76 0.13 72);
+  --warning-700: oklch(0.55 0.115 60);
+
+  --danger-50: oklch(0.965 0.018 22);
+  --danger-100: oklch(0.925 0.045 22);
+  --danger-500: oklch(0.63 0.19 24);
+  --danger-700: oklch(0.505 0.17 25);
+
+  --info-50: oklch(0.965 0.02 250);
+  --info-100: oklch(0.925 0.045 250);
+  --info-500: oklch(0.62 0.13 252);
+  --info-700: oklch(0.485 0.13 254);
+
+  /* --- Semantic surfaces (shadcn contract) ------------------------------- */
+  --background: var(--ink-50);
+  --foreground: var(--ink-900);
+
+  --surface: var(--ink-0);
+  --surface-muted: var(--ink-100);
+  --surface-sunken: var(--ink-200);
+  --surface-brand: var(--brand-950);
+
+  --card: var(--ink-0);
+  --card-foreground: var(--ink-900);
+  --popover: var(--ink-0);
+  --popover-foreground: var(--ink-900);
+
+  --primary: var(--brand-700);
+  --primary-foreground: var(--ink-0);
+  --primary-hover: var(--brand-800);
+
+  --secondary: var(--brand-50);
+  --secondary-foreground: var(--brand-800);
+
+  --muted: var(--ink-100);
+  --muted-foreground: var(--ink-600);
+
+  --accent: var(--mint-100);
+  --accent-foreground: var(--brand-900);
+
+  --destructive: var(--danger-700);
+  --destructive-foreground: var(--ink-0);
+
+  --border: var(--ink-200);
+  --border-strong: var(--ink-300);
+  --input: var(--ink-300);
+  --ring: var(--brand-500);
+
+  /* --- Chart series (recharts) ------------------------------------------- */
+  --chart-1: var(--brand-600);
+  --chart-2: var(--mint-500);
+  --chart-3: var(--brand-300);
+  --chart-4: var(--sand-500);
+  --chart-5: var(--ink-400);
+
+  /* --- Admin sidebar ------------------------------------------------------ */
+  --sidebar: var(--brand-950);
+  --sidebar-foreground: var(--brand-100);
+  --sidebar-primary: var(--mint-300);
+  --sidebar-primary-foreground: var(--brand-950);
+  --sidebar-accent: oklch(0.282 0.043 200 / 0.85);
+  --sidebar-accent-foreground: var(--ink-0);
+  --sidebar-border: oklch(0.348 0.055 199 / 0.6);
+  --sidebar-ring: var(--mint-400);
+
+  /* --- Radii -------------------------------------------------------------- */
+  --radius: 0.875rem;
+
+  /* --- Elevation: tinted with the brand hue, never flat black ------------- */
+  --shadow-xs: 0 1px 2px oklch(0.238 0.017 213 / 0.06);
+  --shadow-sm: 0 1px 2px oklch(0.238 0.017 213 / 0.05), 0 2px 6px -2px oklch(0.238 0.017 213 / 0.06);
+  --shadow-md: 0 2px 4px -2px oklch(0.238 0.017 213 / 0.06), 0 8px 20px -6px oklch(0.238 0.017 213 / 0.1);
+  --shadow-lg: 0 4px 8px -4px oklch(0.238 0.017 213 / 0.06), 0 18px 40px -12px oklch(0.238 0.017 213 / 0.14);
+  --shadow-xl: 0 8px 16px -8px oklch(0.238 0.017 213 / 0.08), 0 32px 72px -20px oklch(0.238 0.017 213 / 0.18);
+  --shadow-ring: 0 0 0 1px oklch(0.238 0.017 213 / 0.06);
+
+  /* --- Motion ------------------------------------------------------------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 140ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+
+  /* --- Signature: the arch ------------------------------------------------ */
+  /* A Gulf archway silhouette, reused for hero panels, team cards, gallery. */
+  --arch-radius: 999px 999px var(--radius) var(--radius);
+}
+
+/* Dark surfaces are defined so shadcn primitives stay coherent if the class is
+   ever applied. The demo ships light-only — there is no theme toggle. */
+.dark {
+  --background: var(--ink-950);
+  --foreground: var(--ink-100);
+
+  --surface: oklch(0.212 0.017 213);
+  --surface-muted: oklch(0.252 0.017 213);
+  --surface-sunken: var(--ink-950);
+  --surface-brand: var(--brand-950);
+
+  --card: oklch(0.212 0.017 213);
+  --card-foreground: var(--ink-100);
+  --popover: oklch(0.212 0.017 213);
+  --popover-foreground: var(--ink-100);
+
+  --primary: var(--mint-300);
+  --primary-foreground: var(--brand-950);
+  --primary-hover: var(--mint-200);
+
+  --secondary: oklch(0.282 0.02 213);
+  --secondary-foreground: var(--ink-100);
+
+  --muted: oklch(0.262 0.018 213);
+  --muted-foreground: var(--ink-400);
+
+  --accent: oklch(0.3 0.03 200);
+  --accent-foreground: var(--mint-100);
+
+  --destructive: oklch(0.62 0.17 25);
+  --destructive-foreground: var(--ink-0);
+
+  --border: oklch(1 0 0 / 0.1);
+  --border-strong: oklch(1 0 0 / 0.18);
+  --input: oklch(1 0 0 / 0.16);
+  --ring: var(--mint-400);
+}
