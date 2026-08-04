@@ -297,6 +297,9 @@ export function AppointmentsBoard() {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getRowId: (row) => row.id,
+    // Nothing here is paginated; leaving the auto-reset on makes the table
+    // loop state updates every time a filtered query returns new data.
+    autoResetPageIndex: false,
   });
 
   const isFiltered =

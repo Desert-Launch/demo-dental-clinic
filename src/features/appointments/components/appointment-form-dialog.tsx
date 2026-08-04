@@ -341,9 +341,11 @@ export function AppointmentFormDialog({
                       <SelectTrigger className="w-full">
                         <SelectValue
                           placeholder={
-                            timeOptions.length === 0
-                              ? "Closed that day"
-                              : "Choose a time"
+                            !service
+                              ? "Pick a treatment first"
+                              : timeOptions.length === 0
+                                ? "Closed that day"
+                                : "Choose a time"
                           }
                         />
                       </SelectTrigger>
