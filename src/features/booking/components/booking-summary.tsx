@@ -132,7 +132,7 @@ function SummaryRow({
         <dd
           className={cn(
             "text-body font-medium",
-            value ? "text-ink-900" : "text-ink-400",
+            value ? "text-ink-900" : "text-ink-500",
           )}
         >
           {value ?? "Not chosen yet"}

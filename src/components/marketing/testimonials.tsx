@@ -41,7 +41,7 @@ export function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <RevealOnView key={testimonial.name} delay={index * 0.06} className="h-full">
             <figure className="flex h-full flex-col rounded-xl border border-border bg-surface p-7">
-              <div className="flex gap-0.5" aria-label="Rated 5 out of 5">
+              <div className="flex gap-0.5" role="img" aria-label="Rated 5 out of 5">
                 {Array.from({ length: 5 }, (_, star) => (
                   <Star
                     key={star}

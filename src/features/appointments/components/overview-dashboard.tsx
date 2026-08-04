@@ -57,7 +57,7 @@ export function OverviewDashboard() {
         ) : (
           <>
             <StatCard
-              label="Today's appointments"
+              label="Today’s appointments"
               value={String(overview.todayTotal)}
               hint={
                 overview.todayTotal === 0
@@ -89,8 +89,8 @@ export function OverviewDashboard() {
         )}
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-[1.35fr_1fr]">
-        <section className="rounded-xl border border-border bg-surface p-6">
+      <div className="mt-6 grid min-w-0 gap-6 xl:grid-cols-[1.35fr_1fr]">
+        <section className="min-w-0 rounded-xl border border-border bg-surface p-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h2 className="text-subtitle font-semibold text-ink-900">
@@ -121,7 +121,7 @@ export function OverviewDashboard() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-border bg-surface p-6">
+        <section className="min-w-0 rounded-xl border border-border bg-surface p-6">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h2 className="text-subtitle font-semibold text-ink-900">

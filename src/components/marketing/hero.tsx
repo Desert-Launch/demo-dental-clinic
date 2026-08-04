@@ -63,9 +63,9 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <dl className="mt-12 flex flex-wrap gap-x-10 gap-y-6">
+            <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-6">
               {trustPoints.map((point, index) => (
-                <div key={point.label} className="flex items-baseline gap-2.5">
+                <li key={point.label} className="flex items-baseline gap-2.5">
                   {index === 0 ? (
                     <Star
                       className="size-4 shrink-0 translate-y-0.5 fill-sand-400 text-sand-500"
@@ -73,17 +73,17 @@ export function Hero() {
                     />
                   ) : null}
                   <div>
-                    <dt
+                    <p
                       data-numeric
                       className="font-display text-subtitle font-semibold text-ink-900"
                     >
                       {point.value}
-                    </dt>
-                    <dd className="text-small text-ink-600">{point.label}</dd>
+                    </p>
+                    <p className="text-small text-ink-600">{point.label}</p>
                   </div>
-                </div>
+                </li>
               ))}
-            </dl>
+            </ul>
           </Reveal>
         </div>
 

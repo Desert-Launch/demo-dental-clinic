@@ -31,11 +31,7 @@ export function StepDentist({
   }
 
   return (
-    <div
-      role="radiogroup"
-      aria-label="Choose a dentist"
-      className="grid gap-3 sm:grid-cols-2"
-    >
+    <div role="group" aria-label="Choose a dentist" className="grid gap-3 sm:grid-cols-2">
       <OptionCard
         selected={dentistId === NO_PREFERENCE}
         onSelect={() => onSelect(NO_PREFERENCE)}
@@ -91,8 +87,7 @@ function OptionCard({
   return (
     <button
       type="button"
-      role="radio"
-      aria-checked={selected}
+      aria-pressed={selected}
       onClick={onSelect}
       className={cn(
         "relative flex items-center gap-4 rounded-xl border p-5 text-left transition-all duration-200 ease-[var(--ease-soft)]",

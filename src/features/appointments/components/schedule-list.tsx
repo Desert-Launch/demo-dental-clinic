@@ -55,7 +55,7 @@ export function ScheduleList({
                 data-numeric
                 className={cn(
                   "text-body font-semibold",
-                  cancelled ? "text-ink-400 line-through" : "text-ink-900",
+                  cancelled ? "text-ink-500 line-through" : "text-ink-900",
                 )}
               >
                 {formatTime(start)}

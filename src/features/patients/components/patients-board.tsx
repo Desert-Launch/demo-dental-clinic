@@ -134,7 +134,7 @@ export function PatientsBoard() {
                 {format(parseISO(row.original.nextVisitAt), "d MMM yyyy")}
               </span>
             ) : (
-              <span className="text-ink-400">Nothing booked</span>
+              <span className="text-ink-500">Nothing booked</span>
             )}
           </p>
         ),

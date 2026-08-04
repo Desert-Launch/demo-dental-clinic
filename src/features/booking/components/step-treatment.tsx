@@ -28,11 +28,7 @@ export function StepTreatment({
   }
 
   return (
-    <div
-      role="radiogroup"
-      aria-label="Choose a treatment"
-      className="grid gap-3 sm:grid-cols-2"
-    >
+    <div role="group" aria-label="Choose a treatment" className="grid gap-3 sm:grid-cols-2">
       {services?.map((service) => {
         const selected = service.id === serviceId;
         const Icon = categoryIcons[service.category];
@@ -40,8 +36,7 @@ export function StepTreatment({
           <button
             key={service.id}
             type="button"
-            role="radio"
-            aria-checked={selected}
+            aria-pressed={selected}
             onClick={() => onSelect(service.id)}
             className={cn(
               "group relative flex items-start gap-4 rounded-xl border p-5 text-left transition-all duration-200 ease-[var(--ease-soft)]",
