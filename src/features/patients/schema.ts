@@ -32,7 +32,7 @@ export const patientFormSchema = z.object({
       return age >= 0 && age <= 120;
     }, "That date of birth is outside the range we can accept."),
   insurer: z.string(),
-  notes: z.string().max(2000, "Keep notes under 2,000 characters.").default(""),
+  notes: z.string().max(2000, "Keep notes under 2,000 characters."),
 });
 
 export type PatientFormValues = z.infer<typeof patientFormSchema>;

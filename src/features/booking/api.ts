@@ -128,6 +128,39 @@ export async function fetchDaySlots(
   return computeDaySlots(parseISO(query.date), service, pool);
 }
 
+export interface NextAvailable {
+  date: string;
+  startMinutes: number;
+  dentistId: string;
+  serviceId: string;
+}
+
+/** Powers the "next available" card in the hero, straight from the store. */
+export async function fetchNextAvailable(
+  serviceId = "svc_check_up",
+): Promise<NextAvailable | null> {
+  await sleep(LATENCY_MS);
+  const service = resolveService(serviceId);
+  const pool = resolvePool(service, NO_PREFERENCE);
+  const today = startOfDay(new Date());
+
+  for (let offset = 0; offset < BOOKING_HORIZON_DAYS; offset += 1) {
+    const day = addDays(today, offset);
+    if (!isClinicOpenOn(day)) continue;
+    const slot = computeDaySlots(day, service, pool).find((option) => option.available);
+    const dentistId = slot?.dentistIds[0];
+    if (slot && dentistId) {
+      return {
+        date: format(day, "yyyy-MM-dd"),
+        startMinutes: slot.startMinutes,
+        dentistId,
+        serviceId: service.id,
+      };
+    }
+  }
+  return null;
+}
+
 export interface SubmitBookingInput {
   serviceId: string;
   dentistId: string;

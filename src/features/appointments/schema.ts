@@ -16,7 +16,7 @@ export const appointmentFormSchema = z.object({
   time: z.string().min(1, "Pick a time."),
   status: appointmentStatusSchema,
   channel: bookingChannelSchema,
-  notes: z.string().max(1000, "Keep notes under 1,000 characters.").default(""),
+  notes: z.string().max(1000, "Keep notes under 1,000 characters."),
 });
 
 export type AppointmentFormValues = z.infer<typeof appointmentFormSchema>;

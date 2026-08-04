@@ -124,7 +124,7 @@
 /* Type scale — deliberate size, line-height and tracking per step.
    Display steps are fluid; reading steps are fixed. */
 @theme {
-  --text-display-1: clamp(2.75rem, 1.45rem + 5vw, 4.75rem);
+  --text-display-1: clamp(2.625rem, 1.6rem + 3.4vw, 4.125rem);
   --text-display-1--line-height: 0.98;
   --text-display-1--letter-spacing: -0.035em;
   --text-display-1--font-weight: 600;

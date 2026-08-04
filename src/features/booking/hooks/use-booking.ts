@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   fetchAvailableDays,
   fetchDaySlots,
+  fetchNextAvailable,
   submitBooking,
   type AvailabilityQuery,
   type SubmitBookingInput,
@@ -26,6 +27,14 @@ export function useDaySlots(query: Partial<AvailabilityQuery & { date: string }>
     queryKey: queryKeys.appointments.availability({ scope: "slots", ...query }),
     queryFn: () => fetchDaySlots(query as AvailabilityQuery & { date: string }),
     enabled,
+  });
+}
+
+/** The soonest slot anyone can take, used by the hero and the booking intro. */
+export function useNextAvailable(serviceId?: string) {
+  return useQuery({
+    queryKey: queryKeys.appointments.availability({ scope: "next", serviceId }),
+    queryFn: () => fetchNextAvailable(serviceId),
   });
 }
 

@@ -27,7 +27,7 @@ export const bookingDetailsSchema = patientFormSchema
   .pick({ firstName: true, lastName: true, email: true, phone: true, dateOfBirth: true })
   .extend({
     insurer: z.string(),
-    reason: z.string().max(500, "Keep this under 500 characters.").default(""),
+    reason: z.string().max(500, "Keep this under 500 characters."),
     consent: z.literal(true, {
       message: "Tick the box so we can hold your appointment.",
     }),

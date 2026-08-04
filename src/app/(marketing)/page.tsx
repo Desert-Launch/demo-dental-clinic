@@ -1,9 +1,21 @@
-import { PageContainer } from "@/components/layout/page-container";
+import { AssuranceStrip } from "@/components/marketing/assurance-strip";
+import { CtaBand } from "@/components/marketing/cta-band";
+import { FeaturedServices } from "@/components/marketing/featured-services";
+import { Hero } from "@/components/marketing/hero";
+import { SmileGallery } from "@/components/marketing/smile-gallery";
+import { TeamStrip } from "@/components/marketing/team-strip";
+import { Testimonials } from "@/components/marketing/testimonials";
 
 export default function HomePage() {
   return (
-    <PageContainer className="py-24">
-      <h1 className="text-display-1">Nile Dental Studio</h1>
-    </PageContainer>
+    <>
+      <Hero />
+      <AssuranceStrip />
+      <FeaturedServices />
+      <TeamStrip />
+      <Testimonials />
+      <SmileGallery />
+      <CtaBand />
+    </>
   );
 }
