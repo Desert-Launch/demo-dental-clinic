@@ -26,27 +26,77 @@ export type ClinicDay = {
   /** 0 = Sunday, matching `Date.getDay()`. */
   weekday: number;
   label: string;
+  shortLabel: string;
   /** Minutes from midnight. `null` when the clinic is closed that day. */
   opens: number | null;
   closes: number | null;
+  /** Midday break — the chairs are empty, so no slots are offered. */
+  breakStart?: number;
+  breakEnd?: number;
   note?: string;
 };
 
 /** Gulf week: Friday opens after midday prayers, Sunday is the quiet day. */
 export const clinicHours: ClinicDay[] = [
-  { weekday: 1, label: "Monday", opens: 9 * 60, closes: 21 * 60 },
-  { weekday: 2, label: "Tuesday", opens: 9 * 60, closes: 21 * 60 },
-  { weekday: 3, label: "Wednesday", opens: 9 * 60, closes: 21 * 60 },
-  { weekday: 4, label: "Thursday", opens: 9 * 60, closes: 21 * 60 },
+  {
+    weekday: 1,
+    label: "Monday",
+    shortLabel: "Mon",
+    opens: 9 * 60,
+    closes: 21 * 60,
+    breakStart: 13 * 60 + 30,
+    breakEnd: 14 * 60 + 30,
+  },
+  {
+    weekday: 2,
+    label: "Tuesday",
+    shortLabel: "Tue",
+    opens: 9 * 60,
+    closes: 21 * 60,
+    breakStart: 13 * 60 + 30,
+    breakEnd: 14 * 60 + 30,
+  },
+  {
+    weekday: 3,
+    label: "Wednesday",
+    shortLabel: "Wed",
+    opens: 9 * 60,
+    closes: 21 * 60,
+    breakStart: 13 * 60 + 30,
+    breakEnd: 14 * 60 + 30,
+  },
+  {
+    weekday: 4,
+    label: "Thursday",
+    shortLabel: "Thu",
+    opens: 9 * 60,
+    closes: 21 * 60,
+    breakStart: 13 * 60 + 30,
+    breakEnd: 14 * 60 + 30,
+  },
   {
     weekday: 5,
     label: "Friday",
+    shortLabel: "Fri",
     opens: 14 * 60,
     closes: 21 * 60,
     note: "Afternoons only",
   },
-  { weekday: 6, label: "Saturday", opens: 10 * 60, closes: 18 * 60 },
-  { weekday: 0, label: "Sunday", opens: null, closes: null, note: "Closed" },
+  {
+    weekday: 6,
+    label: "Saturday",
+    shortLabel: "Sat",
+    opens: 10 * 60,
+    closes: 18 * 60,
+  },
+  {
+    weekday: 0,
+    label: "Sunday",
+    shortLabel: "Sun",
+    opens: null,
+    closes: null,
+    note: "Closed",
+  },
 ];
 
 export function hoursForWeekday(weekday: number): ClinicDay {
