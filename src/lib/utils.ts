@@ -34,6 +34,11 @@ export function formatMinutesOfDay(minutes: number): string {
   return `${hours12}:${String(mins).padStart(2, "0")} ${suffix}`;
 }
 
+/** A `Date` → `9:00 am`, matching `formatMinutesOfDay`. */
+export function formatTime(date: Date): string {
+  return formatMinutesOfDay(date.getHours() * 60 + date.getMinutes());
+}
+
 /** `Layla Al-Mansoori` → `LA`. */
 export function initials(name: string): string {
   return name

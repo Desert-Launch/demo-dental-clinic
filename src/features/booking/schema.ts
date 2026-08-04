@@ -28,9 +28,9 @@ export const bookingDetailsSchema = patientFormSchema
   .extend({
     insurer: z.string(),
     reason: z.string().max(500, "Keep this under 500 characters."),
-    consent: z.literal(true, {
-      message: "Tick the box so we can hold your appointment.",
-    }),
+    consent: z
+      .boolean()
+      .refine((value) => value, "Tick the box so we can hold your appointment."),
   });
 
 export type BookingDetailsValues = z.infer<typeof bookingDetailsSchema>;
@@ -44,7 +44,7 @@ export const bookingStepMeta: Record<
 > = {
   treatment: { title: "Treatment", caption: "What are you coming in for?" },
   dentist: { title: "Dentist", caption: "Anyone in mind?" },
-  slot: { title: "Time", caption: "Pick a day that suits you." },
+  slot: { title: "Time", caption: "When would you like to come in?" },
   details: { title: "Your details", caption: "So we know who to expect." },
   done: { title: "Confirmed", caption: "You're booked in." },
 };
