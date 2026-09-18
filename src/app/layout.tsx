@@ -3,9 +3,12 @@ import type { Metadata, Viewport } from "next";
 import { Providers } from "@/app/providers";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/lib/site";
+import { DemoBar } from "@/components/layout/demo-bar";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  // Fictional business, invented contact details: never a search result.
+  robots: { index: false, follow: false },
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
@@ -31,6 +34,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <DemoBar demo="Nile Dental Studio" slug="dental" />
         <Providers>{children}</Providers>
       </body>
     </html>

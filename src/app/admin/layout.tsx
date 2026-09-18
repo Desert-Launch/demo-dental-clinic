@@ -15,11 +15,13 @@ export const metadata: Metadata = {
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-dvh bg-background">
-      <aside className="fixed inset-y-0 left-0 hidden w-64 lg:block">
-        <AdminSidebar />
+      <aside className="hidden w-64 shrink-0 lg:block">
+        <div className="sticky top-0 h-dvh">
+          <AdminSidebar />
+        </div>
       </aside>
 
-      <div className="flex min-w-0 flex-1 flex-col lg:pl-64">
+      <div className="flex min-w-0 flex-1 flex-col">
         <AdminTopbar />
         <main id="main" className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
           {children}
