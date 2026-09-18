@@ -11,6 +11,8 @@
  * sidebars below it behave exactly as they do without it.
  */
 
+import { DEMO } from "@/lib/demo-site";
+
 const STUDIO = "https://www.desertlaunch.dev";
 const WHATSAPP = "201022838534";
 
@@ -47,15 +49,10 @@ const COPY: Record<
   },
 };
 
-interface DemoBarProps {
-  /** The fictional business this demo portrays, named in the WhatsApp opener. */
-  demo: string;
-  /** Short id the landing site uses for this demo; travels back as utm_campaign. */
-  slug: string;
-  lang?: Lang;
-}
-
-export function DemoBar({ demo, slug, lang = "en" }: DemoBarProps) {
+/** Which demo this is comes from `@/lib/demo-site`, the one place the
+ *  layout, the share preview and the structured data all read. */
+export function DemoBar() {
+  const { name: demo, slug, lang } = DEMO;
   const c = COPY[lang];
   const home = lang === "ar" ? `${STUDIO}/ar/` : `${STUDIO}/`;
   // Query before the hash, or the browser treats the whole tail as the fragment.

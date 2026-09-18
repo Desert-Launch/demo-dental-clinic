@@ -4,16 +4,16 @@ import { Providers } from "@/app/providers";
 import { fontVariables } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { DemoBar } from "@/components/layout/demo-bar";
+import { demoJsonLd, demoMetadata } from "@/lib/desert-launch";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  // Fictional business, invented contact details: never a search result.
-  robots: { index: false, follow: false },
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
-  description: site.description,
+  // Share preview, robots, canonical host and the link back to the studio.
+  ...demoMetadata(),
 };
 
 export const viewport: Viewport = {
@@ -34,7 +34,11 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <DemoBar demo="Nile Dental Studio" slug="dental" />
+        <DemoBar />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(demoJsonLd()) }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>
