@@ -12,7 +12,7 @@ import { formatMinutesOfDay } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Call ${site.phone}, message the front desk, or book online at ${site.name} in Jumeirah 1, Dubai.`,
+  description: `Call ${site.phone}, message the front desk, or book online at ${site.name} in Dubai.`,
 };
 
 export default function ContactPage() {
@@ -32,12 +32,8 @@ export default function ContactPage() {
             <h2 className="text-title">Reach us directly</h2>
             <ul className="mt-6 space-y-5">
               <ContactRow icon={Phone} label="Call the clinic" value={site.phone} href={site.phoneHref} />
-              <ContactRow
-                icon={MessageCircle}
-                label="WhatsApp"
-                value={site.whatsapp}
-                href={`https://wa.me/${site.whatsapp.replace(/\D/g, "")}`}
-              />
+              {/* No link: the number ends in "xxx" and must never open a chat. */}
+              <ContactRow icon={MessageCircle} label="WhatsApp" value={site.whatsapp} />
               <ContactRow
                 icon={Mail}
                 label="Email"

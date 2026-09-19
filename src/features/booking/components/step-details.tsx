@@ -171,7 +171,7 @@ export function StepDetails({
               <FormControl>
                 <Textarea
                   rows={3}
-                  placeholder="Sensitive to cold on the upper left, nervous about needles, running late from Business Bay…"
+                  placeholder="Sensitive to cold on the upper left, nervous about needles, running a few minutes late…"
                   {...field}
                 />
               </FormControl>

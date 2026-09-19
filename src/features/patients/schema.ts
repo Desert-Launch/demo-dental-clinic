@@ -1,16 +1,15 @@
 import { differenceInYears, isValid, parseISO } from "date-fns";
 import { z } from "zod";
 
-/** UAE mobile or landline, with or without spaces: +971 50 123 4567, 0501234567. */
-const phonePattern = /^(\+?971|0)[\s-]?\d{1,2}[\s-]?\d{3}[\s-]?\d{4}$/;
+/** UAE mobile or landline, with or without spaces: +971 50 123 4567, 0501234567.
+ *  The last four may be `x` placeholders — every seeded number ends in "xxx" so
+ *  the demo can never dial a real line, and editing such a record must still
+ *  validate. */
+const phonePattern = /^(\+?971|0)[\s-]?\d{1,2}[\s-]?\d{3}[\s-]?[\dx]{4}$/i;
 
-export const insurers = [
-  "Daman",
-  "AXA Gulf",
-  "Sukoon",
-  "MetLife Gulf",
-  "Oman Insurance",
-] as const;
+/** Generic on purpose: a demo should not put real insurers' names on invented
+ *  patients. */
+export const insurers = ["Insurer A", "Insurer B", "Insurer C", "Insurer D", "Insurer E"] as const;
 
 /** The value the select uses for "no insurer" — a select cannot hold null. */
 export const SELF_PAY = "self-pay";

@@ -114,7 +114,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Full name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Layla Al-Mansoori" autoComplete="name" {...field} />
+                  <Input placeholder="Your name" autoComplete="name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

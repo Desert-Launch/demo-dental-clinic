@@ -31,7 +31,7 @@ export function SiteFooter() {
               <LogoMark className="size-10" />
               <div className="leading-none">
                 <p className="font-display text-subtitle font-semibold text-ink-0">
-                  Nile Dental Studio
+                  {site.name}
                 </p>
                 <p
                   lang="ar"
@@ -43,7 +43,7 @@ export function SiteFooter() {
               </div>
             </div>
             <p className="mt-6 max-w-xs text-body text-brand-200">
-              Gentle, unhurried dental care in Jumeirah since {site.established}.
+              Gentle, unhurried dental care in Dubai since {site.established}.
               Same-day appointments most weekdays.
             </p>
             <Button asChild size="lg" className="mt-7 bg-mint-300 text-brand-950 hover:bg-mint-200">

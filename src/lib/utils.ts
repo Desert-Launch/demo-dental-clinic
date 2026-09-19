@@ -39,7 +39,7 @@ export function formatTime(date: Date): string {
   return formatMinutesOfDay(date.getHours() * 60 + date.getMinutes());
 }
 
-/** `Layla Al-Mansoori` → `LA`. */
+/** `Patient 1` → `P1`. */
 export function initials(name: string): string {
   return name
     .split(" ")

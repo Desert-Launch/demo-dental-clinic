@@ -1,4 +1,4 @@
-# Nile Dental Studio — demo
+# Demo Dental Clinic — demo
 
 A frontend-only marketing and booking site for a fictional Dubai dental clinic,
 built to be shown to prospects. Everything works — booking, rescheduling,

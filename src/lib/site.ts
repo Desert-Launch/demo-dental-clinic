@@ -2,23 +2,24 @@
  * Clinic facts used across marketing, booking and admin. Fictional throughout.
  */
 export const site = {
-  name: "Nile Dental Studio",
-  nameArabic: "استوديو النيل لطب الأسنان",
-  shortName: "Nile Dental",
+  name: "Demo Dental Clinic",
+  nameArabic: "عيادة أسنان تجريبية",
+  shortName: "Demo Dental",
   tagline: "Dentistry that feels calm from the first visit.",
   description:
     "A Dubai dental studio for general, cosmetic, orthodontic and surgical care. Book online in under a minute.",
-  phone: "+971 4 555 0142",
-  phoneHref: "tel:+97145550142",
-  whatsapp: "+971 50 555 0142",
-  email: "hello@niledental.ae",
+  // Deliberately undialable: a demo must never ring a real line.
+  phone: "+971 4 555 0xxx",
+  phoneHref: "/contact",
+  whatsapp: "+971 50 555 0xxx",
+  email: "hello@example.com",
   address: {
-    line1: "Unit 12, Al Wasl Road",
-    line2: "Jumeirah 1, Dubai",
+    line1: "1 Demo Street",
+    line2: "Demo District, Dubai",
     country: "United Arab Emirates",
   },
-  parking: "Free underground parking, level B1",
-  metro: "8 minutes from Business Bay metro",
+  parking: "Free parking on site",
+  metro: "A short walk from the metro",
   established: 2012,
 } as const;
 

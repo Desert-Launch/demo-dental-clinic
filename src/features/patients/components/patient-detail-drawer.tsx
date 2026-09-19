@@ -104,7 +104,8 @@ export function PatientDetailDrawer({
               <section>
                 <h3 className="text-micro uppercase text-ink-500">Contact</h3>
                 <ul className="mt-3 space-y-2.5">
-                  <ContactRow icon={Phone} value={patient.phone} href={`tel:${patient.phone.replace(/\s/g, "")}`} />
+                  {/* Plain text on purpose: seeded numbers end in "xxx" and must never dial. */}
+                  <ContactRow icon={Phone} value={patient.phone} />
                   <ContactRow icon={Mail} value={patient.email} href={`mailto:${patient.email}`} />
                   <ContactRow
                     icon={ShieldCheck}

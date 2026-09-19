@@ -49,7 +49,7 @@ export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
       <div className="flex h-[4.5rem] items-center gap-3 px-5">
         <LogoMark className="size-8" />
         <div className="leading-tight">
-          <p className="font-display text-body font-semibold text-ink-0">Nile Dental</p>
+          <p className="font-display text-body font-semibold text-ink-0">Demo Dental</p>
           <p className="text-small text-brand-300">Clinic dashboard</p>
         </div>
       </div>

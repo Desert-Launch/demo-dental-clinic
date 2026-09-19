@@ -10,7 +10,7 @@ import { ServiceExplorer } from "@/features/services/components/service-explorer
 export const metadata: Metadata = {
   title: "Treatments and prices",
   description:
-    "General, cosmetic, orthodontic and surgical dentistry in Jumeirah, with prices in AED and no surprises at the desk.",
+    "General, cosmetic, orthodontic and surgical dentistry in Dubai, with prices in AED and no surprises at the desk.",
 };
 
 export default function ServicesPage() {

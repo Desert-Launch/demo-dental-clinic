@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-/** The mark: a Gulf arch holding a drop of water — Nile, cleanliness, calm. */
+/** The mark: a Gulf arch holding a drop of water — cleanliness, calm. */
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg
@@ -47,14 +47,14 @@ export function Logo({
             tone === "light" ? "text-ink-0" : "text-ink-900",
           )}
         >
-          Nile Dental{" "}
+          Demo{" "}
           <span
             className={cn(
               "font-normal",
               tone === "light" ? "text-mint-200" : "text-brand-600",
             )}
           >
-            Studio
+            Dental Clinic
           </span>
         </span>
         {withArabic ? (

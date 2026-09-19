@@ -13,7 +13,7 @@ import { formatMinutesOfDay } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "About the studio",
   description:
-    "A four-dentist studio in Jumeirah 1, built around longer appointments and fewer patients a day.",
+    "A four-dentist studio in Dubai, built around longer appointments and fewer patients a day.",
 };
 
 const principles = [
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <MarketingPageHeader
         eyebrow="About"
         title="A small studio, on purpose"
-        lead={`${site.name} opened on Al Wasl Road in ${site.established}. Four dentists, six languages, and a diary that leaves room to answer questions.`}
+        lead={`${site.name} opened in Dubai in ${site.established}. Four dentists, six languages, and a diary that leaves room to answer questions.`}
       />
 
       <Section>
@@ -49,8 +49,8 @@ export default function AboutPage() {
             <h2 className="text-display-3">Built by a dentist who was tired of the queue</h2>
             <div className="mt-6 space-y-5 text-lead text-ink-700">
               <p>
-                Dr. Layla Al-Mansoori spent ten years in London practices where the diary
-                ran the dentistry. She came back to Dubai to try the opposite: longer
+                The founding dentist spent ten years in practices where the diary ran
+                the dentistry, and opened this clinic to try the opposite: longer
                 appointments, honest quotes, and enough time to explain what is happening
                 before it happens.
               </p>
@@ -103,7 +103,7 @@ export default function AboutPage() {
       <Section className="bg-surface-muted/70">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading eyebrow="Find us" title="Jumeirah 1, on Al Wasl Road" />
+            <SectionHeading eyebrow="Find us" title="Demo District, Dubai" />
             <address className="mt-8 text-lead not-italic text-ink-700">
               {site.address.line1}
               <br />

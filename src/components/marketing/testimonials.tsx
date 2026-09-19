@@ -7,23 +7,23 @@ import { Section, SectionHeading } from "@/components/shared/section";
 const testimonials = [
   {
     quote:
-      "I avoided dentists for fifteen years. Dr. Nair talked me through every step before she did it, and not once did I feel rushed.",
-    name: "Hessa A.",
-    area: "Jumeirah",
+      "I avoided dentists for fifteen years. The dentist talked me through every step before doing it, and not once did I feel rushed.",
+    name: "Patient 1",
+    area: "Demo District",
     treatment: "Wisdom tooth removal",
   },
   {
     quote:
       "Booked online at 9 pm with a broken filling, seen at 10 the next morning. The price I was quoted was the price I paid.",
-    name: "Marek K.",
-    area: "Business Bay",
+    name: "Patient 2",
+    area: "Demo District",
     treatment: "Emergency filling",
   },
   {
     quote:
-      "My daughter asks when we are going back, which I did not expect to type. Dr. Barakat is very good with children.",
-    name: "Rania D.",
-    area: "Al Safa",
+      "My daughter asks when we are going back, which I did not expect to type. The family dentist is very good with children.",
+    name: "Patient 3",
+    area: "Demo District",
     treatment: "Family check-up",
   },
 ];

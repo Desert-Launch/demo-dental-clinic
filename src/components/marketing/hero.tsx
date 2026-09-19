@@ -42,7 +42,7 @@ export function Hero() {
 
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-xl text-lead text-ink-700">
-              General, cosmetic and orthodontic care in Jumeirah. Unhurried
+              General, cosmetic and orthodontic care in Dubai. Unhurried
               appointments, a written price before anything starts, and a dentist who
               explains what they are doing while they do it.
             </p>
