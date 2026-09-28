@@ -1,2 +1,7 @@
+# Crawling is allowed on purpose: every page of this demo carries
+# `noindex, follow`, and a crawler has to fetch a page to read that.
+# The business shown is fictional; its indexed description is the
+# industry page on https://www.desertlaunch.dev/industries/ it links to.
+
 User-agent: *
 Allow: /

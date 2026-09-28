@@ -19,6 +19,9 @@ export default function Image() {
   // Satori needs a single text child per box, so the line is one string.
   const kind = DEMO.kind.charAt(0).toUpperCase() + DEMO.kind.slice(1);
   const tagline = `${kind} website + staff dashboard · ${DEMO.city}`;
+  // Where a recipient of a forwarded link can read about getting one:
+  // the studio's page for this kind of business, host and path only.
+  const industryPath = DEMO.industry.url.replace(/^https:\/\/www\./, "").replace(/\/$/, "");
   return new ImageResponse(
     (
       <div
@@ -46,7 +49,7 @@ export default function Image() {
 
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#97a3b6" }}>
           <span>Fictional business · sample data · nothing is kept</span>
-          <span style={{ color: "#f8fafc" }}>desertlaunch.dev/demos</span>
+          <span style={{ color: "#f8fafc" }}>{industryPath}</span>
         </div>
       </div>
     ),

@@ -2,6 +2,12 @@
  * The one piece of Desert Launch chrome on a demo: a slim strip above the
  * site that says what this is, whose it is, and where to ask for one like it.
  *
+ * Two ways out, both measured: the brand opens the studio's page for this
+ * kind of business (what a real build adds, timeline, price, the questions
+ * owners ask), with utm_campaign set to the demo; the call to action opens
+ * WhatsApp with a message naming the demo. The demo itself stays untouched —
+ * no studio copy inside the business's own pages.
+ *
  * It deliberately ignores the demo's palette. The demo has to look like the
  * client's business; this strip has to look like it is *not* part of it. Navy
  * and gold are the studio's own tokens (desertlaunch.dev) and are hardcoded
@@ -13,7 +19,6 @@
 
 import { DEMO } from "@/lib/demo-site";
 
-const STUDIO = "https://www.desertlaunch.dev";
 const WHATSAPP = "201022838534";
 
 type Lang = "en" | "ar";
@@ -24,8 +29,8 @@ const COPY: Record<
     label: string;
     brand: string;
     note: string;
-    cta: string;
-    /** Phone-width label: the full question does not fit beside the brand. */
+    /** Phone-width label: the full question does not fit beside the brand.
+     *  The full one is per demo (`DEMO.cta`), because it names the vertical. */
     ctaShort: string;
     opener: (demo: string) => string;
   }
@@ -34,7 +39,6 @@ const COPY: Record<
     label: "About this demo",
     brand: "Demo by Desert Launch",
     note: "A fictional business with sample data — it resets when you refresh.",
-    cta: "Want this for your business?",
     ctaShort: "Get a quote",
     opener: (demo) =>
       `Hi Desert Launch, I tried the ${demo} demo and I'd like something similar for my business.`,
@@ -43,7 +47,6 @@ const COPY: Record<
     label: "عن هذا العرض التجريبي",
     brand: "عرض تجريبي من Desert Launch",
     note: "نشاط تجاري خيالي ببيانات تجريبية — يُعاد ضبطه عند تحديث الصفحة.",
-    cta: "تريد مثله لنشاطك؟",
     ctaShort: "اطلب عرض سعر",
     opener: (demo) => `مرحباً Desert Launch، جرّبت عرض ${demo} وأريد شيئاً مشابهاً لنشاطي.`,
   },
@@ -54,9 +57,8 @@ const COPY: Record<
 export function DemoBar() {
   const { name: demo, slug, lang } = DEMO;
   const c = COPY[lang];
-  const home = lang === "ar" ? `${STUDIO}/ar/` : `${STUDIO}/`;
-  // Query before the hash, or the browser treats the whole tail as the fragment.
-  const back = `${home}?utm_source=demo&utm_medium=bar&utm_campaign=${slug}#demos`;
+  // The industry page for this demo, which is in the demo's own language.
+  const back = `${DEMO.industry.url}?utm_source=demo&utm_medium=bar&utm_campaign=${slug}`;
   const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(c.opener(demo))}`;
 
   return (
@@ -79,7 +81,7 @@ export function DemoBar() {
         className="ms-auto inline-flex shrink-0 items-center gap-1.5 font-semibold text-[#f5c542] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f5c542]"
       >
         <span className="sm:hidden">{c.ctaShort}</span>
-        <span className="hidden sm:inline">{c.cta}</span>
+        <span className="hidden sm:inline">{DEMO.cta}</span>
         <svg
           viewBox="0 0 24 24"
           fill="none"
